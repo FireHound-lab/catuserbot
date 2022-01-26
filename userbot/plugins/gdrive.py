@@ -480,14 +480,15 @@ async def gdrive_download(
                         status,
                         "".join(
                             Config.FINISHED_PROGRESS_STR
-                            for i in range(math.floor(percentage / 5))
+                            for _ in range(math.floor(percentage / 5))
                         ),
                         "".join(
                             Config.UNFINISHED_PROGRESS_STR
-                            for i in range(20 - math.floor(percentage / 5))
+                            for _ in range(20 - math.floor(percentage / 5))
                         ),
                         round(percentage, 2),
                     )
+
                     current_message = (
                         "**File Downloading**\n\n"
                         f"**Name : **`{file_name}`\n"
